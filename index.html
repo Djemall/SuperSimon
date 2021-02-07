@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Super Simon</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Bouton Règles-->
+<button class="regles" id="openModal">Règles</button>
+
+<!-- Modal de Règles -->
+<div id="Modal" class="modal">
+    <div class="modal-contenu">
+        <span class="closeModal">&times;</span>
+        <p>Bienvenue sur Super Simon !</p>
+        <p>Cliquez sur Jouer pour commencer la partie.</p>
+        <p>Règles :</p>
+        <p>L'ordinateur va générer aléatoirement une suite qu'il vous faudra mémoriser. <br>
+        A votre tour, vous devrez restituer la suite dans le bon ordre. En cas d'erreur, retour à Zéro ! <br>
+        La suite commence à 1 et va ensuite augmenter de 1 à chaque tour. <br>
+        La vitesse du jeu va augmenter à chaque tour pendant les 8 premiers tours . <br>
+        Cliquez sur Reset pour réinitialiser la partie</p>
+    </div>
+</div>
+
+<div id="ModalLose" class="modal">
+    <div class="modal-lose">
+        <span class="closeModalLose">&times;</span>
+        <div class="" id="loseModal">
+        </div>
+    </div>
+</div>
+
+
+<div class="tt">
+    <p class="turn " id="myTurn">A ton tour</p>
+    <p class="turn2 " id="IATurn">Mémorise la suite</p>
+
+</div>
+
+<div id="cercle-externe">
+    <div class="blocus" id="bloque">
+        <div class= "vert vert-bg"   id="0" onclick="clickOnColorButton(this.id)"> <p class="do">DO</p> </div>
+        <div class= "rouge rouge-bg" id="1" onclick="clickOnColorButton(this.id) "><p class="re">RE</p></div>
+        <div class= "bleu bleu-bg"   id="2" onclick="clickOnColorButton(this.id)"><p class="mi">MI</p></div>
+        <div class= "jaune jaune-bg" id="3" onclick="clickOnColorButton(this.id)"><p class="fa">FA</p></div>
+    </div>
+    <div id="cercle-interne">
+        <div class="score" id=""> 
+            Click(s) validé(s) :
+            <p id="ScoreByClick">0</p>
+            Tour(s) terminé(s) : 
+            <p id="ScoreByTurn">0</p>
+        </div>
+        <div class="startstop">
+            <button id="start" onclick="start()">Jouer</button>
+            <button id="reset" onclick="reset()">Reset</button>
+        </div>
+    </div>
+
+</div>
+    <script  src="main.js"></script>
+    <script  src="regles.js"></script>
+</body>
+</html>
